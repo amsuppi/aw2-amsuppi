@@ -1,0 +1,15 @@
+### -------------
+
+# GET http://localhost:3000/
+
+GET http://localhost:3000/
+
+### -------------
+
+# GET http://localhost:3000/usuarios
+
+### -------------
+
+# GET http://localhost:3000/usuarios/1
+
+### -------------
