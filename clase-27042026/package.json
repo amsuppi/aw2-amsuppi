@@ -1,0 +1,24 @@
+{
+  "name": "aw2-amsuppi",
+  "version": "1.0.0",
+  "description": "Les paso los comandos que vimos de git y npm en formato markdown (.md)\r Mañana los repasamos y armamos un repo para guardar lo que vamos viendo en clase:",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amsuppi/aw2-amsuppi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/amsuppi/aw2-amsuppi/issues"
+  },
+  "homepage": "https://github.com/amsuppi/aw2-amsuppi#readme",
+  "dependencies": {
+    "express": "5.2.1"
+  }
+}
