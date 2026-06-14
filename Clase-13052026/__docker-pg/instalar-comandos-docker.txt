@@ -6,8 +6,6 @@ docker run --name contenedor_pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=pass 
 
 /// Verificar la cracion de la Base de Datos y la tabla
 
-npx pnpm i -E pg
-
 ////// Entrar al contenedor
 docker exec -it contenedor_pg bash
 

@@ -2,14 +2,14 @@
 \c tienda;
 
 -- Crear la tabla 'productos'
-CREATE TABLE productosDos (
+CREATE TABLE productos (
     id SERIAL PRIMARY KEY,
     producto VARCHAR(100),
     precio NUMERIC(10, 2)
 );
 
 -- Insertar 10 productos deportivos
-INSERT INTO productosDos (producto, precio) VALUES
+INSERT INTO productos (producto, precio) VALUES
     ('Pelota de fútbol', 25.99),
     ('Raqueta de tenis', 89.99),
     ('Pelota de básquet', 29.99),
