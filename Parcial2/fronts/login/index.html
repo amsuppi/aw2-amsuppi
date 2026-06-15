@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Biblioteca</title>
+    <link rel="stylesheet" href="/css/estilos.css" />
+  </head>
+  <body class="login-page">
+    <form class="login" action="/autenticar" method="post">
+      <h1>Biblioteca</h1>
+      <p id="mensaje-error" class="error" hidden>Usuario o contraseña incorrectos</p>
+      <label for="usuario">
+        Usuario:
+        <input type="text" id="usuario" name="usuario" required />
+      </label>
+      <label for="pass">
+        Contraseña:
+        <input type="password" id="pass" name="pass" required />
+      </label>
+      <button type="submit">Ingresar</button>
+    </form>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("error") === "1") {
+        document.getElementById("mensaje-error").hidden = false;
+      }
+    </script>
+  </body>
+</html>

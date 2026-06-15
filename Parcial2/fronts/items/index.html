@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libros - Biblioteca</title>
+    <link rel="stylesheet" href="/css/estilos.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/items">Libros</a>
+      <a href="/procedimiento">Procedimiento</a>
+      <a class="logout" href="/cerrar-sesion">Cerrar sesión</a>
+    </nav>
+    <main>
+      <div class="card">
+        <h1>Catálogo de libros</h1>
+        <p id="estado">Cargando libros...</p>
+        <ul class="lista-libros" id="lista-libros"></ul>
+      </div>
+    </main>
+    <script>
+      const lista = document.getElementById("lista-libros");
+      const estado = document.getElementById("estado");
+
+      /* Fetch de libros */
+      fetch("/api/v1/libros")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("No autorizado");
+          }
+          return response.json();
+        })
+        .then((libros) => {
+          estado.hidden = true;
+
+          if (libros.length === 0) {
+            estado.textContent = "No hay libros en el catálogo.";
+            estado.hidden = false;
+            return;
+          }
+
+          /* Mostrar libros en la lista */
+
+          libros.forEach((libro) => {
+            const item = document.createElement("li");
+            const enlace = document.createElement("a");
+            enlace.href = `/item?id=${libro.id}`;
+            enlace.textContent = `${libro.titulo} — ${libro.autor}`;
+            item.appendChild(enlace);
+            lista.appendChild(item);
+          });
+        })
+        .catch(() => {
+          /* Mostrar error al cargar los libros */
+          estado.textContent = "Error al cargar los libros.";
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  color: #2d3436;
+  min-height: 100vh;
+}
+
+nav {
+  background: #2c3e50;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav .logout {
+  margin-left: auto;
+  color: #e74c3c;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.error {
+  color: #c0392b;
+  margin-bottom: 1rem;
+}
+
+.lista-libros {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-libros li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.lista-libros a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.lista-libros a:hover {
+  text-decoration: underline;
+}
+
+.detalle dt {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.detalle dd {
+  margin: 0.25rem 0 0;
+}
+
+button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #217dbb;
+}
+
+.resultado {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.resultado.exito {
+  background: #d5f5e3;
+  border: 1px solid #27ae60;
+}
+
+.resultado.error {
+  background: #fadbd8;
+  border: 1px solid #e74c3c;
+}
+
+.explicacion {
+  color: #636e72;
+  line-height: 1.5;
+}
+
+/* Login */
+body.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.login {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 300px;
+}
+
+form.login label {
+  font-weight: 500;
+}
+
+form.login input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  font-size: 1rem;
+}
+
+form.login button {
+  margin-top: 0.5rem;
+}
