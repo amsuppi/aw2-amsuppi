@@ -24,42 +24,6 @@
         <div id="resultado" class="resultado" hidden></div>
       </div>
     </main>
-    <script>
-      const boton = document.getElementById("btn-ejecutar");
-      const resultado = document.getElementById("resultado");
-
-      boton.addEventListener("click", () => {
-        resultado.hidden = false;
-        resultado.textContent = "Ejecutando...";
-        resultado.className = "resultado";
-
-        fetch("/procedimientos/resumen-inventario")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("No autorizado");
-            }
-            return response.json();
-          })
-          .then((data) => {
-            if (data.exito) {
-              resultado.className = "resultado exito";
-              resultado.innerHTML = `
-                <strong>${data.mensaje}</strong>
-                <ul>
-                  <li>Total de libros: ${data.datos.totalLibros}</li>
-                  <li>Promedio de precio: $${data.datos.promedioPrecio}</li>
-                </ul>
-              `;
-            } else {
-              throw new Error(data.mensaje);
-            }
-          })
-          .catch((error) => {
-            resultado.className = "resultado error";
-            resultado.textContent =
-              error.message || "Error al ejecutar el procedimiento.";
-          });
-      });
-    </script>
+    <script src="procedimiento.js"></script>
   </body>
 </html>

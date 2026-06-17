@@ -20,11 +20,6 @@
       </label>
       <button type="submit">Ingresar</button>
     </form>
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      if (params.get("error") === "1") {
-        document.getElementById("mensaje-error").hidden = false;
-      }
-    </script>
+    <script src="login.js"></script>
   </body>
 </html>

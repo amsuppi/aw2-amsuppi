@@ -29,40 +29,6 @@
         <p><a href="/items">← Volver al catálogo</a></p>
       </div>
     </main>
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("id");
-      const estado = document.getElementById("estado");
-      const detalle = document.getElementById("detalle");
-
-      if (!id) {
-        estado.textContent = "Falta el parámetro id en la URL.";
-      } else {
-        fetch(`/api/v1/libros/${id}`)
-          .then((response) => {
-            if (response.status === 404) {
-              throw new Error("No encontrado");
-            }
-            if (!response.ok) {
-              throw new Error("No autorizado");
-            }
-            return response.json();
-          })
-          .then((libro) => {
-            estado.hidden = true;
-            detalle.hidden = false;
-            document.getElementById("titulo").textContent = libro.titulo;
-            document.getElementById("autor").textContent = libro.autor;
-            document.getElementById("paginas").textContent = libro.paginas;
-            document.getElementById("precio").textContent = `$${libro.precio}`;
-          })
-          .catch((error) => {
-            estado.textContent =
-              error.message === "No encontrado"
-                ? "Libro no encontrado."
-                : "Error al cargar el libro.";
-          });
-      }
-    </script>
+    <script src="item.js"></script>
   </body>
 </html>
